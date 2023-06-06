@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Listado de Incidencias</title>
+</head>
+<body>
+<h1>Listado de Incidencias</h1>
+<p><button><a th:href="@{/incidencias/formulario}">Crear una nueva incidencia</a></button></p>
+<table border="1" width="60%">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Fecha</th>
+    <th>Usuario</th>
+    <th>Prioridad</th>
+    <th>Modificar</th>
+    <th>Eliminar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="p : ${incidencias}">
+    <td>[[${p.id_incidencia}]]</td>
+    <td>[[${p.fecha}]]</td>
+    <td>[[${p.usuario}]]</td>
+    <td>[[${p.prioridad}]]</td>
+    <td><a th:href="@{'/incidencias/formulario/'+ ${p.id_incidencia}}">Modificar</a></td>
+    <td><a th:href="@{'/incidencias/eliminar/'+ ${p.id_incidencia}}">Eliminar</a></td>
+
+  </tr>
+  </tbody>
+</table>
+<p/>
+<a th:href="@{'/'}">Regresar a la pagina inicial</a>
+
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alta de Incidencia</title>
+</head>
+<body>
+<h1>Alta de Incidencia</h1>
+<form th:action="@{/incidencias/alta}" method="post" th:object="${incidencias}">
+  <label for="fecha" >Fecha</label>
+  <input type="date" id="fecha" th:field="*{fecha}" required>
+  <label for="usuario" >Usuario</label>
+  <input type="text" id="usuario" th:field="*{usuario}" />
+  <label for="prioridad" >Prioridad</label>
+  <input type="number" id="prioridad" th:field="*{prioridad}" required>
+  <input type="submit" value="Dar de alta la Incidencia">
+</form>
+</body>
+</html>
