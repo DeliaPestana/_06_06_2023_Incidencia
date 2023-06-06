@@ -41,9 +41,9 @@ public class ControladorIncidencia {
         return "redirect:/incidencias";
     }
 
-    @PostMapping("/alta/{id}")
-    public String modificaarIncidencia(Incidencia m, RedirectAttributes ra) {
-        Incidencia i1 = servicio.crear(m);
+    @PostMapping("/modificar/{id}")
+    public String modificarIncidencia(Incidencia m, RedirectAttributes ra) {
+        Incidencia i1 = servicio.modificar(m);
         System.out.println(i1.toString());
         return "redirect:/incidencias";
     }
